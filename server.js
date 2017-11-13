@@ -1,39 +1,41 @@
-// GITHUB REPO: https://github.com/dbmarshall/burger.git 
-// HEROKU APP: https://burger-davidm.herokuapp.com/
-// HEROKU GIT: https://git.heroku.com/burger-davidm.git 
+// GITHUB REPO: https://github.com/dbmarshall/sequelizedBurger.git 
+// HEROKU APP: https://sequelized-burger-davidm.herokuapp.com/
 
-// Initial Dependencies
-var express = require('express');
-var methodOverride = require('method-override');
-var bodyParser = require('body-parser');
-
-// Express Server
-var app = express();
-var PORT = process.env.PORT || 6060;
-
-// Make available static files in /public/ directory
-app.use(express.static('./public'));
-
-// Parsing 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Set Handlebars.
+var express = require("express");
+var bodyParser = require("body-parser");
+var methodOverride = ("method-override");
 var exphbs = require("express-handlebars");
+
+var app = express();
+var PORT = process.env.PORT || 8080;
+
+// Requiring our models for syncing
+var db = require("./models");
+
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.json());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Routing
-var routes = require('./controllers/burgers_controller.js');
-app.use('/', routes);
+// Static directory and Handlebars
+app.use(express.static("public"));
 
-// app.get('/', function (req, res) {
-//   res.send('Got a GET request')
-// })
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// Server Listener
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
+// Routes
+// =============================================================
+// require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
-
-

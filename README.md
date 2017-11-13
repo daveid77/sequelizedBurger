@@ -4,19 +4,43 @@ Week Eight Homework Part 2: [Node Express Handlebars](http://ucb.bootcampcontent
 
 ## Installation
 
-```
-git clone https://github.com/dbmarshall/sequelizedBurger.git
-cd sequelizedBurger
-npm install
-```
+1. Clone repo and install NPM packages:
+
+    ```
+    git clone https://github.com/dbmarshall/sequelizedBurger.git
+    cd sequelizedBurger/
+    npm install 
+    ```
+
+2. Update `config/config.json` with **your** local/development environment username and password
+
+3. Create `sequelizedburger_db` database in MySQL: 
+
+    ```
+    mysql -u root -p
+    source schema.sql;
+    exit;
+    ```
+
+4. Start server to create tables from models:
+
+    ```
+    node server.js
+    ```
+
+6. Populate tables with data in MySQL: 
+
+    ```
+    cd db/
+    mysql -u root -p
+    source seeds.sql;
+    exit;
+    ```
 
 ## Available Node Commands and URLs
 
 **Local:** 
 
-* Create `sequelizedburger_db` MySQL database 
-* Populate database with `db/schema.sql` and `db/seeds.sql`
-* Update `config/config.json` with **your** local/development environment username and password
 * Run `node server.js` 
 * Then load [http://localhost:8080/](http://localhost:8080/)
 
