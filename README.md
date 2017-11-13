@@ -1,12 +1,12 @@
-# Burger
+# Sequelized Burger
 
-Week Seven Homework Part 2: [Node Express Handlebars](http://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/09-11-2017-UCB-Class-Repository-FSF-FT/blob/master/07-week/homework/part-2/homework_instructions.md).
+Week Eight Homework Part 2: [Node Express Handlebars](http://ucb.bootcampcontent.com/UCB-Coding-Bootcamp/09-11-2017-UCB-Class-Repository-FSF-FT/blob/master/08-week/homework/part-2/homework_instructions.md).
 
 ## Installation
 
 ```
-git clone https://github.com/dbmarshall/burger.git
-cd burger
+git clone https://github.com/dbmarshall/sequelizedBurger.git
+cd sequelizedBurger
 npm install
 ```
 
@@ -14,12 +14,15 @@ npm install
 
 **Local:** 
 
+* Create `sequelizedburger_db` MySQL database 
+* Populate database with `db/schema.sql` and `db/seeds.sql`
+* Update `config/config.json` with **your** local/development environment username and password
 * Run `node server.js` 
-* Then load [http://localhost:6060/](http://localhost:6060/)
+* Then load [http://localhost:8080/](http://localhost:8080/)
 
 **Heroku Deployment:** 
 
-* Load [https://burger-davidm.herokuapp.com/](https://burger-davidm.herokuapp.com/)
+* Load [https://sequelized-burger-davidm.herokuapp.com/](https://sequelized-burger-davidm.herokuapp.com/)
 
 ## Misc Notes
 
