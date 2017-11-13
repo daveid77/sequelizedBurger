@@ -12,7 +12,7 @@ Week Eight Homework Part 2: [Node Express Handlebars](http://ucb.bootcampcontent
     npm install 
     ```
 
-2. Update `config/config.json` with **your** local/development environment username and password
+2. Update `config/config.json` with **your** development (local) environment username and password
 
 3. Create `sequelizedburger_db` database in MySQL: 
 
@@ -22,7 +22,7 @@ Week Eight Homework Part 2: [Node Express Handlebars](http://ucb.bootcampcontent
     exit;
     ```
 
-4. Start server to create tables from models:
+4. Start server to create tables from sequelized models:
 
     ```
     node server.js
