@@ -15,23 +15,37 @@ module.exports = function(app) {
         order: [['burger_name', 'ASC']]
       }
       ).then(function(dbBurger) {
+      // res.json(dbBurger);
+      var hbsObject = {
+        burger: dbBurger
+      };
+      res.render('index', hbsObject);
+    });
+  });
+
+  // POST route for saving a new burger
+  app.post('/api/burgers', function(req, res) {
+    console.log(req.body);
+    db.Burger.create({
+      burger_name: req.body.name,
+      devoured: false
+    }).then(function(dbBurger) {
       res.json(dbBurger);
     });
   });
 
-  // POST route for saving a new todo
-  // app.post('/api/burgers', function(req, res) {
-  //   console.log(req.body);
-  //   db.Burger.create({
-  //     burger_name: req.body.burger_name,
-  //     devoured: false
-  //   }).then(function(dbBurger) {
-  //     res.json(dbBurger);
-  //   });
-  // });
-
-  // app.put('/api/burgers/:id', function(req, res) {
-
-  // });
+  app.put('/api/burgers/:id', function(req, res) {
+    console.log(req.params.id);
+    db.Burger.update({
+      devoured: true,
+      }, {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
 
 };
