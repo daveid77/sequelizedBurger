@@ -1,9 +1,11 @@
 -- JAWSDB 
-USE lxom1nolscwa8q4w;
+USE by50wgtw6s23kzit;
 
-INSERT INTO burgers (burger_name) VALUES ('Boca');
-INSERT INTO burgers (burger_name) VALUES ('Portobello');
-INSERT INTO burgers (burger_name) VALUES ('Fakin\' Bacon');
--- INSERT INTO burgers (burger_name, devoured) VALUES ('Fakin\' Bacon', true);
+-- DROP TABLE IF EXISTS `Burgers`; 
 
-SELECT * FROM burgers;
+INSERT INTO Burgers (burger_name) VALUES ('Boca');
+INSERT INTO Burgers (burger_name) VALUES ('Portobello');
+INSERT INTO Burgers (burger_name) VALUES ('Fakin\' Bacon');
+-- INSERT INTO Burgers (burger_name, devoured) VALUES ('Fakin\' Bacon', true);
+
+SELECT * FROM Burgers;

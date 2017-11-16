@@ -50,7 +50,7 @@ Week Eight Homework Part 2: [Node Express Handlebars](http://ucb.bootcampcontent
 
 ## Misc Notes
 
-* Github repo pushes autodeploy to Heroku (sweet).
+* Github repo master branch pushes autodeploy to Heroku (sweet).
 
 ## Author
 
